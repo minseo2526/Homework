@@ -1,0 +1,226 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "CodeCells_Basic_.ipynb",
+      "provenance": [],
+      "toc_visible": true,
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/minseo2526/Homework/blob/main/120%20d.pop()_121%20d.update()ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "greats={'유비':89,'관우':95,'장비':91,'조운':94}\n",
+        "level=greats.pop('관우')\n",
+        "print(f'greats:{greats}\\nlevel:{level}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Y4j6xZYxsifh",
+        "outputId": "9a68e29e-b4b4-43e7-bc37-a81dc192344e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "greats:{'유비': 89, '장비': 91, '조운': 94}\n",
+            "level:95\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "level=greats.pop('제갈량')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 150
+        },
+        "id": "l4VcvuLmtAxX",
+        "outputId": "cb432b12-eae7-4b3a-afb6-91da0e86c470"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyError",
+          "evalue": "'제갈량'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipython-input-3970356345.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mlevel\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mgreats\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mpop\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'제갈량'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mKeyError\u001b[0m: '제갈량'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "level=greats.pop('제갈량',99)\n",
+        "print(f'greats:{greats}\\n제갈량의 레벨:{level}')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9ZOCJTA1tJjZ",
+        "outputId": "8ad674ba-52ce-491f-e28a-9c807fdb7ead"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "greats:{'유비': 89, '장비': 91, '조운': 94}\n",
+            "제갈량의 레벨:99\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "greats={'유비':89,'관우':95,'장비':91,'조운':94}\n",
+        "while len(greats)>0:\n",
+        "  general=greats.popitem()\n",
+        "  print(f'추출한 장군:{general}\\ngreats 상태:{greats}')\n",
+        "  print('-'*50)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eeX84qw5tafw",
+        "outputId": "e228eb78-f2ff-433c-9969-e0ad760fe0fc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "추출한 장군:('조운', 94)\n",
+            "greats 상태:{'유비': 89, '관우': 95, '장비': 91}\n",
+            "--------------------------------------------------\n",
+            "추출한 장군:('장비', 91)\n",
+            "greats 상태:{'유비': 89, '관우': 95}\n",
+            "--------------------------------------------------\n",
+            "추출한 장군:('관우', 95)\n",
+            "greats 상태:{'유비': 89}\n",
+            "--------------------------------------------------\n",
+            "추출한 장군:('유비', 89)\n",
+            "greats 상태:{}\n",
+            "--------------------------------------------------\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "general=greats.popitem()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 150
+        },
+        "id": "QSpPwk5st0qX",
+        "outputId": "ae44b382-f1aa-4f66-d806-bb5053966718"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyError",
+          "evalue": "'popitem(): dictionary is empty'",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipython-input-2793494992.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mgeneral\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mgreats\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mpopitem\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mKeyError\u001b[0m: 'popitem(): dictionary is empty'"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "greats={'유비':89,'관우':95,'장비':91,'조운':94}\n",
+        "others={'제갈량':99,'황충':70}\n",
+        "greats.update(others)\n",
+        "print(greats)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6sCHqfqjuCnC",
+        "outputId": "54d526d2-7c88-415c-c05a-0c358e21a9e7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'유비': 89, '관우': 95, '장비': 91, '조운': 94, '제갈량': 99, '황충': 70}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "greats.update(유비=90,관우=96)\n",
+        "print(greats)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TiY5b9TYuPmc",
+        "outputId": "3a97b43a-8728-485e-d65a-f6ee9598a83c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'유비': 90, '관우': 96, '장비': 91, '조운': 94, '제갈량': 99, '황충': 70}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
