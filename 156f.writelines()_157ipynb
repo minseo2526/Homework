@@ -1,0 +1,139 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "CodeCells_Basic_.ipynb",
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/minseo2526/Homework/blob/main/156f.writelines()_157ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data1='This is data1'\n",
+        "data2='This is data2'\n",
+        "with open('mydata.txt','w') as f:\n",
+        "  f.writelines(data1)\n",
+        "  f.writelines(data2)"
+      ],
+      "metadata": {
+        "id": "YHtF24agAp69"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "with open('mydata.txt','r') as f:\n",
+        "  data=f.read()\n",
+        "print(data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "c7ffdXoqBBnb",
+        "outputId": "d7db23eb-fd17-4a46-d1fd-994e095b96e5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "This is data1This is data2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data1='This is data1\\n'\n",
+        "data2='This is data2\\n'"
+      ],
+      "metadata": {
+        "id": "Gl5nl_R3BLCj"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "data=['This is data1\\n','This is data2\\n']\n",
+        "with open('mydata.txt','w') as f:\n",
+        "  f.writelines(data)"
+      ],
+      "metadata": {
+        "id": "PQyg2HxOBU2m"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "with open('mydata.txt','r') as f:\n",
+        "    data=f.read()\n",
+        "print(data)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hLQO09-xBwGb",
+        "outputId": "82b5061d-f693-4b57-90e2-9d23dbe1d66f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "This is data1\n",
+            "This is data2\n",
+            "\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "bufsize=1024\n",
+        "with open('sunrise.jpg','rb') as f:\n",
+        "  with open('sunrise_copied.jpg','wb') as h:\n",
+        "    data=f.read(bufsize)\n",
+        "    while data:\n",
+        "      h.write(data)\n",
+        "      data=f.read(bufsize)"
+      ],
+      "metadata": {
+        "id": "gLEXhh0aB5Xr"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
